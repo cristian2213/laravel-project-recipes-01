@@ -1,0 +1,22 @@
+1. cuando se sube una imagen se debe poner en el fornm el atributo: enctype="multipart/form-data"
+2. cuando la imagen se guar con el metodo store('nombre de la carpeta a guardar el archivo', 'carpeta en la cual se va aguarda la carpeta con las imagenes');
+3. para poder acceder a las imagenes, se deben hacer visibles con: storage
+  storage:link
+4. para ve la imagen: http://127.0.0.1:8000/storage/upload-recetas/4eeSo2hmO6K5kARSBdvOb02letmCq0lY0qATpmqD.png
+
+5. para guarda una imagen con un tamaño predeterminado se puede hacer mediante la bibliotece intervention image.
+
+6. en /resources/js:
+  app.js -> intallar framewares
+  bootstrap.js -> intallar dependencia
+
+7. store crea la carpeta y guarda la imagen, pero para poder hacer visible al archivo en la carpeta publica se necesita crear un link con el comando storage:link -> esto va a crear un vinculo con la carpeta storage/app/public/upload-recetas que es de indole privado y la va a recrear en la carpeta public/upload-recetas que es el directorio publico en el cual si tenemos acceso para cargar las imagenes asi -> /storage/{{$receta->imagen}}
+
+8. policies: son una forma de autorizar a los usuarios para que hagan acciones determinadas:
+el nombre del policy es igual al nombre del modelo y tambien se le ata un modelo con -m nameModel
+- php artisan make:policy RecetaPolicy -m Receta
+
+9. crear migracion y poner nombre a la tabla:
+php artisan make:migration create_like_receta_pivot_table --create likes_receta -> segundo parametro es el nombre de la tabla
+
+10. php artisan migrate --path=/database/migrations
