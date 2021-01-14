@@ -58,7 +58,9 @@
             </div>
 
             {{-- Vue component --}}
-            <like-button></like-button>
+            <div class="row justify-content-center text-center">
+                <like-button receta-id="{{ $receta->id }}" like="{{ $like }}" likes="{{ $likes }}"></like-button>
+            </div>
 
         </div>
     </article>

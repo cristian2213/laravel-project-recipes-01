@@ -7,57 +7,10 @@ use Illuminate\Http\Request;
 
 class LikesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function __construct()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Receta  $receta
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Receta $receta)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Receta  $receta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Receta $receta)
-    {
-        //
+        $this->middleware('auth');
     }
 
     /**
@@ -69,17 +22,7 @@ class LikesController extends Controller
      */
     public function update(Request $request, Receta $receta)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Receta  $receta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Receta $receta)
-    {
-        //
+        // toggle es un metod que esta compuesto por attached,    detached lo cual permite que al momento de dar click en el componente de Vue va a venir a este metodo del controlador y toggle comprueba si ya hay un registro en la db, si lo hay entonces lo elimina y sino entonces lo crea.
+        return auth()->user()->meGusta()->toggle($receta);
     }
 }

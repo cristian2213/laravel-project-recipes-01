@@ -1,50 +1,113 @@
 body {
-  font-family: $parrafos-font-family;
+    font-family: $parrafos-font-family;
+    background-color: #f4f0f0;
 }
-
-trix-editor{
-  min-height: 300px;
+trix-editor {
+    min-height: 400px;
 }
-
 .bg-primary .navbar-brand {
-  color: white;
-  font-family: $font-family-sans-serif;
-  font-size: 2rem;
-
-  &:hover {
     color: white;
-  }
+    font-family: $font-family-sans-serif;
+    font-size: 2rem;
+    font-family: "Fredoka One", cursive;
+    color: #fff !important;
+    font-size: 2.4rem;
+    text-decoration: none;
+    &:hover {
+        color: white;
+    }
 }
-/* like animation */
-.like-btn {
-  display: inline-block;
-  Cursor: pointer;
-  width: 80px;
-  height: 80px;
+.icono {
+    width: 16px;
+}
+.barra {
+    background-color: #ed4646 !important;
+}
+.fecha {
+    color: #ed4646 !important;
+}
+.receta-meta p {
+    font-size: 12px;
+    font-weight: bold;
+}
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: #fff;
+            font-size: 1.4rem;
+            &:focus,
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
 }
 
-.like-btn {
-  background: url('https://i.ibb.co/vw78mf3/heart.png') no-repeat 0% 50%;
-  background-size: 2900%;
+.titulo-categoria {
+    font-family: "Cabin", sans-serif;
+    color: #333;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #ed4646 ;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    padding-right: 2rem;
 }
 
-.like-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.subtitle {
+    border-bottom: 3px solid #ff5353 !important;
 }
 
-.like-active {
-  animation-timing-function: steps(28);
+.btn-receta,
+.btn-receta:hover {
+    background-color: #ed4646 !important;
+    border: none;
 }
 
-.clap-active {
-   animation-timing-function: steps(8);
+.owl-carousel .owl-stage {
+    display: flex;
+}
+.card {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+}
+.card-body {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
+.categorias-bg {
+    background-color: #fff;
+    .nav-link {
+        color: #222 !important;
+        display: inline-block;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+        &:before {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: #ed4646;
+            transform: translateX(-100%);
+        }
+        &:hover:before {
+            transform: translateX(0);
+        }
+    }
 }

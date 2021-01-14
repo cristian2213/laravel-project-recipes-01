@@ -138,6 +138,8 @@ return [
 
         /*
          * Laravel Framework Service Providers...
+         * 
+         * Para tener todos los metods provedores en toda la app, como por ejemplo los providers de auth estan en todos los controladores
          */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,

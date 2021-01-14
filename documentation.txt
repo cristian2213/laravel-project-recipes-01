@@ -20,3 +20,5 @@ el nombre del policy es igual al nombre del modelo y tambien se le ata un modelo
 php artisan make:migration create_like_receta_pivot_table --create likes_receta -> segundo parametro es el nombre de la tabla
 
 10. php artisan migrate --path=/database/migrations
+
+11.Providers: para tener datos disponibles en todas las vistas, hay diferentes tipos de Providers, estan los de autenticacion

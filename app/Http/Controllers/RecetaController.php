@@ -125,7 +125,16 @@ class RecetaController extends Controller
             return redirect()->action('RecetaController@index');
         } */
 
-        return view('recetas.show', compact('receta'));
+        // obtener si el usuario actal le gusta la receta y esta autenticado
+        // contains: si se le pasa una id identifica si esa id existe en los megustas
+
+        $like = (auth()->user()) ? auth()->user()->meGusta->contains($receta->id) : false;
+
+
+        // pasa la cantidad de likes a la vista
+        $likes = $receta->likes->count();
+
+        return view('recetas.show', compact('receta', 'like', 'likes'));
     }
 
     /**
