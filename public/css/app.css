@@ -10911,6 +10911,10 @@ trix-editor {
   min-height: 400px;
 }
 
+img {
+  border-radius: 3px;
+}
+
 .bg-primary .navbar-brand {
   color: white;
   font-family: "Fredoka One", cursive;
@@ -11025,6 +11029,18 @@ trix-editor {
 
 .categorias-bg .nav-link:hover:before {
   transform: translateX(0);
+}
+
+.hero-categorias {
+  background-image: linear-gradient(to bottom, rgba(70, 70, 70, 0.4), rgba(53, 53, 53, 0.571)), url("/images/P6s9zYWU3mDVeHVuwVQUr7roHTwDlU3fKjNjSUw9.jpg");
+  height: 80vh;
+  background-size: cover;
+  background-position: top center;
+}
+
+.hero-categorias .texto-buscar p {
+  font-size: 1.4rem;
+  color: #FFF;
 }
 
 /* like animation */

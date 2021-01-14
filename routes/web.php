@@ -32,8 +32,14 @@ Route::put('/recetas/{receta}', 'RecetaController@update')->name('recetas.update
 
 Route::delete('/recetas/{receta}', 'RecetaController@destroy')->name('recetas.destroy'); // delete recipe
 
+//********************** Buscador de Recetas ***********/
+Route::get('/buscar', 'RecetaController@search')->name('buscar.show');
+
 // manejar rutas simplificada en un solo recurso
 //Route::resource('recetas', 'RecetaController');
+
+//***************** Rutas categoria *********/
+Route::get('/categoria/{categoriaReceta}', 'CategoriasController@show')->name('categorias.show');
 
 //* ******************** Rutas Perfil *******************
 Route::get('/perfiles/{perfil}', 'PerfilController@show')->name('perfiles.show');

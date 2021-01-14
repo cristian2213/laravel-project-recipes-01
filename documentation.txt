@@ -21,4 +21,5 @@ php artisan make:migration create_like_receta_pivot_table --create likes_receta 
 
 10. php artisan migrate --path=/database/migrations
 
-11.Providers: para tener datos disponibles en todas las vistas, hay diferentes tipos de Providers, estan los de autenticacion
+11.Providers: para tener datos disponibles en todas las vistas, hay diferentes tipos de Providers, estan los de autenticacion entre otros.
+■ Los providers se crean y luego se deben registrar

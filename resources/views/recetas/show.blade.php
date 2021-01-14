@@ -12,8 +12,7 @@
 @endsection
 
 @section('content')
-
-    <article class="contenido-receta col-md-10 mx-auto">
+    <article class="contenido-receta col-md-10 mx-auto bg-white p-5 shadow">
         <h1 class="text-center mb-4">{{ $receta->title }}</h1>
 
         <div class="imagen-receta">
@@ -21,15 +20,16 @@
         </div>
 
         <div>
-            <p>
+            <p class="mt-3">
                 <span class="font-weight-bold text-primary mt-2">written in:</span>
-                {{ $receta->categoria->nombre }}
+                <a href="{{ route('categorias.show', $receta->categoria->id) }}"
+                    class="text-body">{{ $receta->categoria->nombre }}</a>
             </p>
             <p>
                 <span class="font-weight-bold text-primary">Author:</span>
                 {{-- TODO: show the user that created this recipe
                 --}}
-                <a href="{{ route('perfiles.show', $receta->autor->id) }}"> {{ $receta->autor->name }}</a>
+                <a href="{{ route('perfiles.show', $receta->autor->id) }}" class="text-body"> {{ $receta->autor->name }}</a>
 
             </p>
             <p>

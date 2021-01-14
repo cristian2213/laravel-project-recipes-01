@@ -16,7 +16,7 @@ class RecetaController extends Controller
     {
         //* autenticar las rutas
         //$this->middleware('auth')->except('show');
-        $this->middleware('auth', ['except' => 'show']);
+        $this->middleware('auth', ['except' => ['show', 'search']]);
     }
 
     /**
@@ -218,5 +218,23 @@ class RecetaController extends Controller
         $receta->delete(); //other methods for delete
         //Receta::destroy($receta);
         return redirect()->action('RecetaController@index');
+    }
+
+    public function search(Request $request)
+    {
+        $data = request()->validate([
+            'buscar' => 'required'
+        ]);
+
+        // buscar en la db con el like
+        $recetas = Receta::where('title', 'like', '%' . $data['buscar'] . '%')->paginate(6);
+
+        $recetas->appends($data['buscar']);
+
+        if (!$recetas[0]) {
+            return redirect()->route('inicio.index');
+        }
+
+        return view('busquedas.show', compact('recetas', 'data'));
     }
 }

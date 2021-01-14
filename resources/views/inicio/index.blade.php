@@ -1,12 +1,35 @@
 @extends('layouts.app')
 
 
-@section('styles')
+@section('hero')
+    <div class="hero-categorias">
+        <form method="GET" action="{{ route('buscar.show') }}" class="container h-100">
+            @csrf
 
+            <div class="row h-100 align-items-center">
+                <div class="col-md-4 texto-buscar">
+                    <p class="display-4">{{ Str::title('Search a recipe for your next food') }}</p>
+
+                    <input type="search" name="buscar" id="buscar" class="form-control" placeholder="Search A Recipe">
+
+                    @error('buscar')
+                        <span class="invalid-feedback d-block text-white" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+        </form>
+    </div>
 @endsection
 
 
 @section('content')
+    {{-- asset or url => hacen referencia a la carpeta publica
+    --}}
+    {{-- <img src="{{ asset('/images/P6s9zYWU3mDVeHVuwVQUr7roHTwDlU3fKjNjSUw9.jpg') }}"
+        alt="fondo" class="mb-5 mt-0 d-block w-100 "> --}}
+
     <div class="container nuevas-recetas">
         <h2 class="titulo-categoria text-uppercase">Lastest Recipes</h2>
 

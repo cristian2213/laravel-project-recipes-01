@@ -1,0 +1,20 @@
+@extends('layouts.app')
+
+
+@section('content')
+
+    <div class="container">
+        <h2 class="titulo-categoria text-uppercase mb-4">
+            Search Result: {{ $data['buscar'] }}
+        </h2>
+
+        <div class="row">
+            @foreach ($recetas as $recipe)
+                @include('ui.receta')
+            @endforeach
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            {{ $recetas->links() }}
+        </div>
+    </div>
+@endsection
